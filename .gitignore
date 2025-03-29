@@ -3,3 +3,6 @@
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 /.venv/
 /.venv/*
+/web_crawler/web_crawler/spiders/output/
+/classify_regulations_scikit-learn/input/
+/classify_regulations_scikit-learn/trainingData/

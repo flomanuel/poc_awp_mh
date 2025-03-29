@@ -14,3 +14,7 @@ source ./venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+## Crawl a website
+```
+scrapy crawl <spider_name>
+```
