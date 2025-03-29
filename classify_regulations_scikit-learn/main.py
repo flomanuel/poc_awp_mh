@@ -3,6 +3,7 @@ import glob
 import os
 
 import numpy as np
+from bs4 import BeautifulSoup
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import LinearSVC
@@ -20,7 +21,11 @@ def read_files_from_folder(folder_path):
             else:
                 regulation_list.append(["No Regulation"])
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
-                file_contents.append(file.read())
+                file_content = file.read()
+                soup = BeautifulSoup(file_content, 'html.parser')
+                soup.prettify()
+                body = soup.find("body").text or ""
+                file_contents.append(body)
     return [file_contents, regulation_list]
 
 
